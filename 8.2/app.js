@@ -4,9 +4,9 @@ let mycountry={
     capital: "Helsinki",
     language: " Finnish", 
     population: "6 million",
-    neighbours:"3",
+    neighbours:[sweden, norway, russia];
     describe : function(){
-        console.log("Finland has " + mycountry.population + " people, their mother tongue is " +mycountry.language+" they have "+mycountry.neighbours+" neighbouring countries and a capital called "
+        console.log("Finland has " + mycountry.population + " people, their mother tongue is " +mycountry.language+" they have "+mycountry.neighbours.length+" neighbouring countries and a capital called "
         +mycountry.capital+".");
     }  
 };
@@ -14,10 +14,10 @@ let mycountry={
 mycountry.describe();
 
 //4
-check= function(){
-    return mycountry.neighbours==0 ? true:false;
+check = function(){
+    return mycountry.neighbours.length==0 ? true:false;
 }
 mycountry.checkIsland = check;
-mycountry.checkIsland();
-console.log(mycountry.checkIsland());
+//mycountry.checkIsland();
+//console.log(mycountry.checkIsland());
 
