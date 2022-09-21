@@ -10,34 +10,34 @@ func1 = function(book1,book2){
 bookUtils.getFirstPublished=func1;
 
 func2 =function(book,edition_year){
-    book.latestEdition = edition_year;
+    book['latestEdition'] = edition_year;
 }
 bookUtils.setNewEdition=func2;
 
 func3 =function(book,language){
-    book.language = language;
+    book['language'] = language;
 }
 bookUtils.setLanguage=func3;
 
 func4 =function(book,language,translator){
-    let ob={language:translator};
-    book.translation=ob;
+    let ob=new Object()
+    ob['language']=language;
+    ob['translator']=translator;
+    book['translation']=ob;
 }
 bookUtils.setTranslation=func4;
 
 func5 = function(book,name,location){
-    let obj={name:location};
+    let obj=new Object()
+    ob['name'] =name;
+    ob['location']=location;
     book.publisher=obj;
 }
 bookUtils.setPublisher=func5;
 
 func5 = function(book1,book2){
-    if(book1.name == book2.name){
-        if(book1.name.location == book2.name.location){
-            return true;
-        }
-    }
-    return false;
+    
+    return _.isEqual(book1.publisher, book2.publisher);;
 }
 
 bookUtils.isSamePublisher=func5;
